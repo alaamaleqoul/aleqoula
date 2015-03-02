@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="de.appplant.cordova.plugin.gallary"
+      version="0.1.0">
+    <name>SavePhotoPlugin</name>
+    <description>Sample Save Photo Plugin</description>
+    <keywords>gallary, ios, android, windows phone 8, wp8</keywords>
+   <license>Apache 2.0</license>
+
+    <author>the save photo plugin's author</author>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+	
+    <js-module src="www/SavePhotoPlugin.js" name="SavePhotoPlugin">
+        <clobbers target="window.savephotoplugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="SavePhotoPlugin">
+                <param name="android-package" value="de.appplant.cordova.plugin.gallary.SavePhotoPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/SavePhotoPlugin.java" target-dir="src/de/appplant/cordova/plugin/gallary" />      
+     </platform>          
+</plugin>
